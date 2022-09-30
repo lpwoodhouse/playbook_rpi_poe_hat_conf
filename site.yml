@@ -1,0 +1,8 @@
+---
+- name: set fan speed levels on rpi cluster nodes
+  hosts: all
+  become: true
+  gather_facts: true
+   
+  roles:
+    - rpi_fan_levels_ubuntu
