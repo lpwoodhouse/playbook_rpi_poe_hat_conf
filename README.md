@@ -1,8 +1,9 @@
-# Ansible Role: rpi_fan_levels_ubuntu
+# Ansible Playbook: rpi_poe_hat_fan_config_ubuntu
 
 ### Part of my Raspberry Pi cluster project
 
-Sets the 4 levels of cpu temperature at which an increase in fan speed occurs.
+Sets the 4 levels of cpu temperature at which an increase in fan speed occurs.<br>
+This play is for ubuntu distros only.
 
 ## Requirements
 
