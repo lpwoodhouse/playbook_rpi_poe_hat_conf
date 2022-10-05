@@ -4,10 +4,10 @@
   blockinfile:
     path: /boot/config.txt
     block: |
-      dtparam=poe_fan_temp0={{ fan_level0 }}
-      dtparam=poe_fan_temp1={{ fan_level1 }}
-      dtparam=poe_fan_temp2={{ fan_level2 }}
-      dtparam=poe_fan_temp3={{ fan_level3 }}
+      dtparam=poe_fan_temp0={{ poe_fan_temp0 }}
+      dtparam=poe_fan_temp1={{ poe_fan_temp1 }}
+      dtparam=poe_fan_temp2={{ poe_fan_temp2 }}
+      dtparam=poe_fan_temp3={{ poe_fan_temp3 }}
     marker: "# {mark} ANSIBLE MANAGED BLOCK FOR POE HAT FAN SPEEDS"
   ignore_errors: true
   
