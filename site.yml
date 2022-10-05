@@ -1,17 +1,8 @@
 ---
-- name: set fan speed levels on rpi cluster nodes
+- name: set poe hat fan trip points on rpi cluster hosts
   hosts: all
   become: true
   gather_facts: true
    
-  tasks:
-    
-  - name: configure PoE Hat (Raspbian)
-    inculde_role:
-      name: rpi_fan_levels_raspbian
-    when: ansible_distribution != "Ubuntu"
-  
-  - name: configure PoE Hat (Ubuntu)
-    inculde_role:
-      name: rpi_fan_levels_ubuntu
-    when: ansible_distribution == "Ubuntu"
+  roles:
+    - rpi_poe_hat_conf

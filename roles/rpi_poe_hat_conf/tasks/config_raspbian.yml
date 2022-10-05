@@ -1,5 +1,5 @@
 ---
-# main tasks for rpi_fan_levels role
+# configure trip points for poe hat fan on debian/raspbian
 - name: add poe hat fan speeds to /boot/config.txt
   blockinfile:
     path: /boot/config.txt
@@ -25,4 +25,3 @@
   debug: 
     msg: "reboot required for changes to take effect."
   when: not reboot_var|bool
-

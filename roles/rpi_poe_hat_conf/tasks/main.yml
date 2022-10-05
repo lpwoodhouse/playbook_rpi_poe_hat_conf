@@ -1,0 +1,9 @@
+---
+# the distros require different methods in poe hat fan configuration
+- name: configure poe hat (raspbian/debian)
+  include_tasks: config_raspbian.yml
+  when: ansible_distribution != "Ubuntu"
+  
+- name: configure poe hat (ubuntu)
+  include_tasks: config_ubuntu.yml
+  when: ansible_distribution == "Ubuntu"
