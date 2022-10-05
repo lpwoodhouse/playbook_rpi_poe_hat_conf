@@ -1,14 +1,14 @@
 SUBSYSTEM=="thermal"
 KERNEL=="thermal_zone0"
 
-ATTR{trip_point_3_temp}="75000"
-ATTR{trip_point_3_hyst}="5000"
+ATTR{trip_point_3_temp}="{{ trip_point_temp3 }}"
+ATTR{trip_point_3_hyst}="{{ trip_point_hyst3 }}"
 
-ATTR{trip_point_2_temp}="78000"
-ATTR{trip_point_2_hyst}="2000"
+ATTR{trip_point_2_temp}="{{ trip_point_temp2 }}"
+ATTR{trip_point_2_hyst}="{{ trip_point_hyst2 }}"
 
-ATTR{trip_point_1_temp}="80000"
-ATTR{trip_point_1_hyst}="2000"
+ATTR{trip_point_1_temp}="{{ trip_point_temp1 }}"
+ATTR{trip_point_1_hyst}="{{ trip_point_hyst1 }}"
 
-ATTR{trip_point_0_temp}="81000"
-ATTR{trip_point_0_hyst}="5000"
+ATTR{trip_point_0_temp}="{{ trip_point_temp0 }}"
+ATTR{trip_point_0_hyst}="{{ trip_point_hyst0 }}"

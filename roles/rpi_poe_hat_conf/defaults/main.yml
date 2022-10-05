@@ -2,14 +2,25 @@
 ## default variables for rpi_poe_hat_conf role
 
 # variables for raspbian/debian distro
-fan_level0: 75000 # example 55000 = 55'C
-fan_level1: 80000
-fan_level2: 85000
-fan_level3: 90000
+poe_fan_temp0: 75000 # example 55000 = 55'C
+poe_fan_temp1: 78000
+poe_fan_temp2: 80000
+poe_fan_temp3: 81000
 
 # variables for ubuntu distros
-
-
+# state 0 (off)
+# state 1
+trip_point_temp3: 75000
+trip_point_hyst3: 5000 # hysterisis value determines the temp when fan rpm changes down a state
+# state 2
+trip_point_temp2: 78000
+trip_point_hyst2: 2000
+# state 3
+trip_point_temp1: 80000
+trip_point_hyst1: 2000
+# state 4
+trip_point_temp0: 81000
+trip_point_hyst0: 5000
 
 # rpi's will require reboot for changes to take effect. False prevents role from rebooting rpi's
 reboot_var: true
