@@ -1,0 +1,12 @@
+---
+# default variables for rpi_fan_levels role
+
+# example level: 55000 = 55'C
+fan_level0: 75000
+fan_level1: 80000
+fan_level2: 85000
+fan_level3: 90000
+
+# rpi's will require reboot for changes to take effect. False prevents role from rebooting rpi's
+reboot_var: true
+

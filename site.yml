@@ -4,5 +4,14 @@
   become: true
   gather_facts: true
    
-  roles:
-    - rpi_fan_levels_ubuntu
+  tasks:
+    
+  - name: configure PoE Hat (Raspbian)
+    inculde_role:
+      name: rpi_fan_levels_raspbian
+    when: ansible_distribution != "Ubuntu"
+  
+  - name: configure PoE Hat (Ubuntu)
+    inculde_role:
+      name: rpi_fan_levels_ubuntu
+    when: ansible_distribution == "Ubuntu"
