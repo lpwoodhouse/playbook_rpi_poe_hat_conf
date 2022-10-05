@@ -1,15 +1,36 @@
 ---
 # configure trip points for poe hat fan on debian/raspbian
-- name: add poe hat fan speeds to /boot/config.txt
-  blockinfile:
-    path: /boot/config.txt
-    block: |
-      dtparam=poe_fan_temp0={{ fan_level0 }}
-      dtparam=poe_fan_temp1={{ fan_level1 }}
-      dtparam=poe_fan_temp2={{ fan_level2 }}
-      dtparam=poe_fan_temp3={{ fan_level3 }}
-    marker: "# {mark} ANSIBLE MANAGED BLOCK FOR POE HAT FAN SPEEDS"
-  ignore_errors: true
+---
+# This task gets poe fan speed levels on distros where poe params are configured by udev (i.e Ubuntu)
+
+- name: get cpu temp trip points
+  shell: cat /etc/udev/rules.d/50-rpi-fan.rules | grep ATTR | awk 'BEGIN { FS =  "="} ; {print $2}'
+  register: trip_results
+
+- name: get fan time in state stats
+  shell: cat /sys/class/thermal/cooling_device0/stats/time_in_state_ms | awk 'BEGIN { FS = " "} ; {print $2}'
+  register: state_stats
+
+- name: poe fan time in state results (in minutes)
+  debug:
+    msg:
+      - "state0(off): {{ (state_stats.stdout_lines[0]+'ms') | community.general.to_minutes | float | round(2) }} min"
+      - "state1(tp3): {{ (state_stats.stdout_lines[1]+'ms') | community.general.to_minutes | float | round(2) }} min"
+      - "state2(tp2): {{ (state_stats.stdout_lines[2]+'ms') | community.general.to_minutes | float | round(2) }} min"
+      - "state3(tp1): {{ (state_stats.stdout_lines[3]+'ms') | community.general.to_minutes | float | round(2) }} min"
+      - "state4(tp0): {{ (state_stats.stdout_lines[4]+'ms') | community.general.to_minutes | float | round(2) }} min"
+
+- name: cpu temp trip point results (in millidegrees)
+  debug:
+    msg:
+      - 'tp3 temp: {{trip_results.stdout_lines[0]}}'
+      - 'tp3 hyst: {{trip_results.stdout_lines[1]}}'
+      - 'tp2 temp: {{trip_results.stdout_lines[2]}}'
+      - 'tp2 hyst: {{trip_results.stdout_lines[3]}}'
+      - 'tp1 temp: {{trip_results.stdout_lines[4]}}'
+      - 'tp1 hyst: {{trip_results.stdout_lines[5]}}'
+      - 'tp0 temp: {{trip_results.stdout_lines[6]}}'
+      - 'tp0 hyst: {{trip_results.stdout_lines[7]}}'
   
 - name: reboot cluster
   reboot:
