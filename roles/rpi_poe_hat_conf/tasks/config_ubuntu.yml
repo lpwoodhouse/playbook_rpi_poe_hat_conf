@@ -1,22 +1,21 @@
 ---
 # configure trip points for poe hat fan on ubuntu
 
+- name: transfer udev rules file
+  template:
+    src: 50-rpi-fan.rules.j2
+    dest: /etc/udev/rules.d/50-rpi-fan.fules
+    owner: root
+    group: root
+    mode: 0644
+
+- name: reload udev rules
+  shell: >
+    udevadm control --reload-rules && udevadm trigger
+
 - name: get cpu temp trip points
   shell: cat /etc/udev/rules.d/50-rpi-fan.rules | grep ATTR | awk 'BEGIN { FS =  "="} ; {print $2}'
   register: trip_results
-
-- name: get fan time in state stats
-  shell: cat /sys/class/thermal/cooling_device0/stats/time_in_state_ms | awk 'BEGIN { FS = " "} ; {print $2}'
-  register: state_stats
-
-- name: poe fan time in state results (in minutes)
-  debug:
-    msg:
-      - "state0(off): {{ (state_stats.stdout_lines[0]+'ms') | community.general.to_minutes | float | round(2) }} min"
-      - "state1(tp3): {{ (state_stats.stdout_lines[1]+'ms') | community.general.to_minutes | float | round(2) }} min"
-      - "state2(tp2): {{ (state_stats.stdout_lines[2]+'ms') | community.general.to_minutes | float | round(2) }} min"
-      - "state3(tp1): {{ (state_stats.stdout_lines[3]+'ms') | community.general.to_minutes | float | round(2) }} min"
-      - "state4(tp0): {{ (state_stats.stdout_lines[4]+'ms') | community.general.to_minutes | float | round(2) }} min"
 
 - name: cpu temp trip point results (in millidegrees)
   debug:
