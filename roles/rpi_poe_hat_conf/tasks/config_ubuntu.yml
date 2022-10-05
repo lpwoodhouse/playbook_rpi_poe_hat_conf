@@ -1,7 +1,5 @@
 ---
-# configure trip points for poe hat fan on debian/raspbian
----
-# This task gets poe fan speed levels on distros where poe params are configured by udev (i.e Ubuntu)
+# configure trip points for poe hat fan on ubuntu
 
 - name: get cpu temp trip points
   shell: cat /etc/udev/rules.d/50-rpi-fan.rules | grep ATTR | awk 'BEGIN { FS =  "="} ; {print $2}'

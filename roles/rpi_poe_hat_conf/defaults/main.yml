@@ -1,11 +1,15 @@
 ---
-# default variables for rpi_fan_levels role
+## default variables for rpi_poe_hat_conf role
 
-# example level: 55000 = 55'C
-fan_level0: 75000
+# variables for raspbian/debian distro
+fan_level0: 75000 # example 55000 = 55'C
 fan_level1: 80000
 fan_level2: 85000
 fan_level3: 90000
+
+# variables for ubuntu distros
+
+
 
 # rpi's will require reboot for changes to take effect. False prevents role from rebooting rpi's
 reboot_var: true
