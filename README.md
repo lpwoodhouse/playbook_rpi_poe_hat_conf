@@ -1,4 +1,5 @@
 ![GitHub repo file count](https://img.shields.io/github/directory-file-count/lpwoodhouse/playbook_rpi_poe_hat_conf)
+![GitHub language count](https://img.shields.io/github/languages/count/lpwoodhouse/playbook_rpi_poe_hat_conf)
 # Ansible Playbook: rpi_poe_hat_conf
 ## Part of my Raspberry Pi cluster project
 
