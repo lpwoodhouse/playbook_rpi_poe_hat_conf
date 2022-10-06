@@ -1,7 +1,7 @@
 # Ansible Playbook: rpi_poe_hat_conf
 ![GitHub last commit](https://img.shields.io/github/last-commit/lpwoodhouse/playbook_rpi_poe_hat_conf)
 ![GitHub repo file count](https://img.shields.io/github/directory-file-count/lpwoodhouse/playbook_rpi_poe_hat_conf)
-![GitHub language count](https://img.shields.io/github/languages/count/lpwoodhouse/playbook_rpi_poe_hat_conf)
+![GitHub top language](https://img.shields.io/github/languages/top/lpwoodhouse/playbook_rpi_poe_hat_conf)
 
 ## Purpose
 
