@@ -50,7 +50,7 @@ None
 
 ## License
 
-[MIT](LICENSE)
+![GitHub](https://img.shields.io/github/license/lpwoodhouse/playbook_rpi_poe_hat_conf)
 
 ## Author Information
 
