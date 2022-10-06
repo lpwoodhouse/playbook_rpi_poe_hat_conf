@@ -1,7 +1,7 @@
+# Ansible Playbook: rpi_poe_hat_conf
+![GitHub last commit](https://img.shields.io/github/last-commit/lpwoodhouse/playbook_rpi_poe_hat_conf)
 ![GitHub repo file count](https://img.shields.io/github/directory-file-count/lpwoodhouse/playbook_rpi_poe_hat_conf)
 ![GitHub language count](https://img.shields.io/github/languages/count/lpwoodhouse/playbook_rpi_poe_hat_conf)
-# Ansible Playbook: rpi_poe_hat_conf
-## Part of my Raspberry Pi cluster project
 
 ## Purpose
 
@@ -52,7 +52,7 @@ None
 
 ## License
 
-![GitHub](https://img.shields.io/github/license/lpwoodhouse/playbook_rpi_poe_hat_conf)
+[![GitHub](https://img.shields.io/github/license/lpwoodhouse/playbook_rpi_poe_hat_conf)](LICENSE)
 
 ## Author Information
 
