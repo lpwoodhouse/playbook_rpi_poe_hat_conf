@@ -3,6 +3,8 @@
 ![GitHub repo file count](https://img.shields.io/github/directory-file-count/lpwoodhouse/playbook_rpi_poe_hat_conf)
 ![GitHub top language](https://img.shields.io/github/languages/top/lpwoodhouse/playbook_rpi_poe_hat_conf)
 
+## Part of my Raspberry Pi cluster project
+
 ## Purpose
 
 This playbook configures the CPU temperature trip points for the Raspberry Pi PoE Hat fan.
