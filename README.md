@@ -1,10 +1,11 @@
-# Ansible Playbook: rpi_poe_hat_conf
-![GitHub last commit](https://img.shields.io/github/last-commit/lpwoodhouse/playbook_rpi_poe_hat_conf)
-![GitHub repo file count](https://img.shields.io/github/directory-file-count/lpwoodhouse/playbook_rpi_poe_hat_conf)
-![GitHub top language](https://img.shields.io/github/languages/top/lpwoodhouse/playbook_rpi_poe_hat_conf)
-
-## Part of my Raspberry Pi cluster project
-
+# Configure RPI CPU Temperature Trip Points
+## Raspberry Pi cluster project
+![Raspberry Pi](https://img.shields.io/badge/-Raspberry%20Pi-C51A4A?style=flat&logo=Raspberry-Pi)
+[![playbook](https://img.shields.io/badge/Ansible%20Playbook-grey?stype=flat&logo=ansible&logoColor=EE0000)](site.yml)
+![GitHub last commit](https://img.shields.io/github/last-commit/lpwoodhouse/rpi_poe_hat_conf)
+![GitHub repo file count](https://img.shields.io/github/directory-file-count/lpwoodhouse/rpi_poe_hat_conf)
+![GitHub top language](https://img.shields.io/github/languages/top/lpwoodhouse/rpi_poe_hat_conf)
+[![GitHub](https://img.shields.io/github/license/lpwoodhouse/rpi_poe_hat_conf)](LICENSE)
 ## Purpose
 
 This playbook configures the CPU temperature trip points for the Raspberry Pi PoE Hat fan.
@@ -51,10 +52,6 @@ None
   roles:
     - rpi_poe_hat_conf
 ```
-
-## License
-
-[![GitHub](https://img.shields.io/github/license/lpwoodhouse/playbook_rpi_poe_hat_conf)](LICENSE)
 
 ## Author Information
 
